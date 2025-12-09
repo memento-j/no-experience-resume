@@ -14,13 +14,7 @@ export default function ResumeBuilderForm(): React.JSX.Element {
     const [currentStep, setCurrentStep] = useState<number>(1);
     const totalSteps = 5;
 
-    const {
-        register,
-        handleSubmit,
-        watch,
-        trigger,
-        formState: { errors }
-    } = useForm<ResumeFormData>({
+    const { register, handleSubmit, watch, trigger, formState: { errors } } = useForm<ResumeFormData>({
         defaultValues: {
             // Step 1: Job Information
             jobTitle: '',
@@ -618,7 +612,7 @@ export default function ResumeBuilderForm(): React.JSX.Element {
                                 className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all ${
                                     currentStep === 1
                                         ? 'bg-slate-800 text-slate-600 cursor-not-allowed'
-                                        : 'bg-slate-700 text-white hover:bg-slate-600'
+                                        : 'bg-slate-700 text-white hover:bg-slate-600 hover:cursor-pointer'
                                 }`}
                             >
                                 <ArrowLeft className="w-5 h-5" />
